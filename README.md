@@ -8,7 +8,7 @@ Example of a request without a hash:
 
 ```
 curl -I 'http://test.belugacdn.com/test-video.mp4'  
-HTTP/1.1 403 Forbidden  
+HTTP/1.1 401 Unauthorized
 ```
 
 Generate the hash of the requested URL using the provided PHP or Python example:
