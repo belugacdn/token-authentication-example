@@ -1,0 +1,22 @@
+<html>
+<head>
+<script type="text/javascript" src="js/md5.js"></script>
+<pre id="output"></pre>
+<title>BelugaCDN Token Authentication</title>
+</head>
+<body>
+<script>
+ var host = "http://test.belugacdn.com"
+ var path = "/test-video.mp4";
+ var secret = "xa5aileeph6nah5ooQu";
+ var d = new Date();
+ var t = d.getTime() / 1000;
+ var expire = parseInt(t) + 360 ;
+ var sign = path+'?expires='+expire+'&pass='+secret;
+ var md5 = calcMD5(sign); 
+ var secure = "?token=" + md5 + "&expires=" + expire;
+ document.open()
+ document.write(host+ path+ secure)
+ document.close()
+</script>
+</body>
